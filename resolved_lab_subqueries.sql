@@ -5,12 +5,12 @@ SELECT
     COUNT(i.inventory_id) AS number_of_copies
 FROM 
 film f
-JOIN 
+LEFT JOIN 
     sakila.inventory i ON f.film_id = i.film_id
 WHERE 
-    f.title = 'HUNCHBACK IMPOSSIBLE'
+    f.title = 'Hunchback Impossible'
 GROUP BY 
-    f.title;
+    f.film_id;
     
 SELECT 
     title, 
@@ -40,7 +40,7 @@ WHERE
                 FROM 
                   film
                 WHERE 
-                    title = 'ALONE TRIP'
+                    title = 'Alone Trip'
             )
     );
  
