@@ -1,8 +1,7 @@
-USE sakila;
 
 SELECT 
-    f.title, 
-    COUNT(i.inventory_id) AS number_of_copies
+
+  COUNT(i.inventory_id) AS number_of_copies
 FROM 
 film f
 LEFT JOIN 
@@ -34,7 +33,7 @@ WHERE
         FROM 
           film_actor
         WHERE 
-            film_id = (
+            film_id IN (
                 SELECT 
                     film_id
                 FROM 
